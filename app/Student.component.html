@@ -1,0 +1,15 @@
+<div *ngIf="serviceTitle" >
+    <h1>Local Title:{{title}}</h1>  
+
+  <li *ngFor="let std of serviceTitle" >
+        <span class="badge">{{std["name"]}}</span>
+        </li>
+
+     <h1>Title Coming from Service:{{serviceTitle["name"]}}</h1>
+        <ul class="heroes">
+      <li *ngFor="let student of studentInfo" [class.selected]="student === selectedStudent" (click)="onSelect(student)">
+        <span class="badge">{{student["StudentID"]}}</span> {{student["StudentFName"]}}
+        </li>
+    </ul>
+    <my-student-detail [student]='selectedStudent' > </my-student-detail>
+</div>
